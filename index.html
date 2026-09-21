@@ -405,7 +405,7 @@
       </div>
     </div>
 
-    <!-- Dokumentasi Tugas Sebelumnya (Pertemuan 1) -->
+    <!-- Dokumentasi Tugas 1: Hello Android -->
     <section class="docs-section">
       <div class="docs-header">
         <div>
@@ -414,7 +414,7 @@
               <polyline points="16 18 22 12 16 6"></polyline>
               <polyline points="8 6 2 12 8 18"></polyline>
             </svg>
-            <span>Dokumentasi Pengerjaan Tugas Pertemuan Sebelumnya</span>
+            <span>Dokumentasi Tugas 1: Hello Android</span>
           </div>
           <p class="docs-subtitle">Inisialisasi Android Studio & Hello Android</p>
         </div>
@@ -431,7 +431,7 @@
       </div>
     </section>
 
-    <!-- Dokumentasi Tugas Baru: Profile Card Jetpack Compose -->
+    <!-- Dokumentasi Tugas 2: Profile Card -->
     <section class="docs-section">
       <div class="docs-header">
         <div>
@@ -440,7 +440,7 @@
               <path d="M12 20h9"></path>
               <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
             </svg>
-            <span>Dokumentasi Tugas Praktikum: Profile Card</span>
+            <span>Dokumentasi Tugas 2: Profile Card</span>
           </div>
           <p class="docs-subtitle">Implementasi Jetpack Compose — Tampilan UI & Kode Sumber</p>
         </div>
@@ -450,7 +450,7 @@
         <!-- Hasil Preview UI -->
         <div class="preview-box">
           <span style="font-size: 0.85rem; font-weight: 800; color: #1e293b;">Hasil Akhir UI (Preview)</span>
-          <img src="tugas02-android.png" alt="Hasil Pratinjau Profile Card" />
+          <img src="profile-card-preview.png" alt="Hasil Pratinjau Profile Card" />
           <span class="preview-caption">Tampilan Kartu Profil Mahasiswa</span>
         </div>
 
@@ -587,6 +587,114 @@ fun StatusBadge(text: String) {
             fontSize = 12.sp,
             fontWeight = FontWeight.SemiBold,
             color = Color(0xFF1D4ED8)
+        )
+    }
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dokumentasi Tugas 3: Happy Birthday App -->
+    <section class="docs-section">
+      <div class="docs-header">
+        <div>
+          <div class="section-title title-dark" style="margin-bottom: 0.2rem;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Dokumentasi Tugas 3: Happy Birthday App</span>
+          </div>
+          <p class="docs-subtitle">Implementasi Jetpack Compose — GreetingText & Layouting Text</p>
+        </div>
+      </div>
+
+      <div class="docs-grid">
+        <!-- Hasil Preview UI -->
+        <div class="preview-box">
+          <span style="font-size: 0.85rem; font-weight: 800; color: #1e293b;">Hasil Akhir UI (Preview)</span>
+          <img src="tugas03-android.png" alt="Hasil Pratinjau Happy Birthday App" />
+          <span class="preview-caption">Tampilan Happy Birthday Card</span>
+        </div>
+
+        <!-- Kode Sumber MainActivity.kt -->
+        <div class="mockup-window">
+          <div class="window-bar">
+            <span class="window-dot dot-red"></span>
+            <span class="window-dot dot-yellow"></span>
+            <span class="window-dot dot-green"></span>
+            <span class="window-title">MainActivity.kt (Happy Birthday)</span>
+          </div>
+          <pre class="code-content"><code>package com.example.happybirthday
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.happybirthday.ui.theme.HappyBirthdayTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            HappyBirthdayTheme {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    GreetingText(
+                        message = "Happy Birthday Sam!",
+                        from = "From Emma",
+                        modifier = Modifier.padding(8.dp)
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        modifier = modifier
+    ) {
+        Text(
+            text = message,
+            fontSize = 100.sp,
+            lineHeight = 116.sp,
+            textAlign = TextAlign.Center
+        )
+        Text(
+            text = from,
+            fontSize = 36.sp,
+            modifier = Modifier
+                .padding(16.dp)
+                .align(alignment = Alignment.End)
+        )
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true, name = "My Preview")
+@Composable
+fun BirthdayCardPreview() {
+    HappyBirthdayTheme {
+        GreetingText(
+            message = "Happy Birthday Sam!",
+            from = "From Emma"
         )
     }
 }</code></pre>
