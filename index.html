@@ -702,6 +702,150 @@ fun BirthdayCardPreview() {
       </div>
     </section>
 
+    <!-- Dokumentasi Tugas 4: Greeting Card App -->
+    <section class="docs-section">
+      <div class="docs-header">
+        <div>
+          <div class="section-title title-dark" style="margin-bottom: 0.2rem;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+            </svg>
+            <span>Dokumentasi Tugas 4: Greeting Card App</span>
+          </div>
+          <p class="docs-subtitle">Implementasi Jetpack Compose — GreetingCardScreen & Interactive Button</p>
+        </div>
+      </div>
+
+      <div class="docs-grid">
+        <!-- Hasil Preview UI -->
+        <div class="preview-box">
+          <span style="font-size: 0.85rem; font-weight: 800; color: #1e293b;">Hasil Akhir UI (Preview)</span>
+          <img src="tugas04-android.png" alt="Hasil Pratinjau Greeting Card App" />
+          <span class="preview-caption">Tampilan Greeting Card Screen</span>
+        </div>
+
+        <!-- Kode Sumber MainActivity.kt -->
+        <div class="mockup-window">
+          <div class="window-bar">
+            <span class="window-dot dot-red"></span>
+            <span class="window-dot dot-yellow"></span>
+            <span class="window-dot dot-green"></span>
+            <span class="window-title">MainActivity.kt (Greeting Card)</span>
+          </div>
+          <pre class="code-content"><code>package com.example.greetingcard
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.greetingcard.ui.theme.GreetingCardTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            GreetingCardTheme {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    GreetingCardScreen()
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun GreetingCardScreen(modifier: Modifier = Modifier) {
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .padding(horizontal = 32.dp, vertical = 24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.SpaceBetween
+    ) {
+        Column(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Text(
+                text = "👋",
+                fontSize = 56.sp
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(
+                text = "Hello, Android!",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color(0xFF1E293B)
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Text(
+                text = "Welcome to Jetpack Compose",
+                fontSize = 14.sp,
+                color = Color(0xFF64748B)
+            )
+        }
+
+        Button(
+            onClick = { /* Aksi saat diklik */ },
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(48.dp),
+            shape = RoundedCornerShape(10.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color(0xFF007AFF)
+            )
+        ) {
+            Text(
+                text = "Start",
+                fontSize = 16.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = Color.White
+            )
+        }
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun GreetingCardPreview() {
+    GreetingCardTheme {
+        GreetingCardScreen()
+    }
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
     <footer>
       &copy; 2026 Muhammad Hisyam Nurdy. Dibuat untuk pemenuhan tugas perkuliahan.
     </footer>
