@@ -960,6 +960,209 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
       </div>
     </section>
 
+    <!-- Dokumentasi Tugas 6: BMI Calculator App -->
+    <section class="docs-section">
+      <div class="docs-header">
+        <div>
+          <div class="section-title title-dark" style="margin-bottom: 0.2rem;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+            <span>Dokumentasi Tugas 6: BMI Calculator App</span>
+          </div>
+          <p class="docs-subtitle">Implementasi Jetpack Compose — Form Input, Calculation Logic & BMI Category State</p>
+        </div>
+      </div>
+
+      <div class="docs-grid">
+        <!-- Hasil Preview UI -->
+        <div class="preview-box">
+          <span style="font-size: 0.85rem; font-weight: 800; color: #1e293b;">Hasil Akhir UI (Preview)</span>
+          <img src="tugas06-android.png" alt="Hasil Pratinjau BMI Calculator App" />
+          <span class="preview-caption">Tampilan BMI Calculator Screen</span>
+        </div>
+
+        <!-- Kode Sumber MainActivity.kt -->
+        <div class="mockup-window">
+          <div class="window-bar">
+            <span class="window-dot dot-red"></span>
+            <span class="window-dot dot-yellow"></span>
+            <span class="window-dot dot-green"></span>
+            <span class="window-title">MainActivity.kt (BMI Calculator)</span>
+          </div>
+          <pre class="code-content"><code>package com.example.bmi_calculator
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import java.util.Locale
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            MaterialTheme {
+                Surface(modifier = Modifier.fillMaxSize()) {
+                    BMICalculatorApp()
+                }
+            }
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun BMICalculatorApp() {
+    var weightInput by remember { mutableStateOf("") }
+    var heightInput by remember { mutableStateOf("") }
+    var bmiResult by remember { mutableStateOf<Float?>(null) }
+    var bmiCategory by remember { mutableStateOf("") }
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Top
+    ) {
+        Text(
+            text = "BMI Calculator",
+            style = MaterialTheme.typography.headlineMedium
+        )
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        OutlinedTextField(
+            value = weightInput,
+            onValueChange = { weightInput = it },
+            label = { Text("Berat Badan (kg)") },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            singleLine = true,
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        OutlinedTextField(
+            value = heightInput,
+            onValueChange = { heightInput = it },
+            label = { Text("Tinggi Badan (cm)") },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            singleLine = true,
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Button(
+                onClick = {
+                    val weight = weightInput.replace(',', '.').toFloatOrNull()
+                    val heightCm = heightInput.replace(',', '.').toFloatOrNull()
+
+                    if (weight != null && heightCm != null && heightCm > 0) {
+                        val heightM = heightCm / 100
+                        val bmi = weight / (heightM * heightM)
+                        bmiResult = bmi
+
+                        bmiCategory = when {
+                            bmi < 18.5f -> "Kekurangan Berat Badan"
+                            bmi in 18.5f..24.9f -> "Normal"
+                            bmi in 25.0f..29.9f -> "Kelebihan Berat Badan"
+                            else -> "Obesitas"
+                        }
+                    }
+                },
+                modifier = Modifier.weight(1f)
+            ) {
+                Text("Hitung BMI")
+            }
+
+            Spacer(modifier = Modifier.width(12.dp))
+
+            OutlinedButton(
+                onClick = {
+                    weightInput = ""
+                    heightInput = ""
+                    bmiResult = null
+                    bmiCategory = ""
+                },
+                modifier = Modifier.weight(1f)
+            ) {
+                Text("Reset")
+            }
+        }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        TextButton(
+            onClick = {
+                bmiCategory = "Acuan: <18.5 Kurang, 18.5-24.9 Normal, >=25 Lebih"
+            }
+        ) {
+            Text("Lihat Kategori")
+        }
+
+        Spacer(modifier = Modifier.height(32.dp))
+
+        bmiResult?.let { bmi ->
+            Text(
+                text = "Hasil BMI",
+                style = MaterialTheme.typography.titleMedium
+            )
+            Text(
+                text = String.format(Locale.US, "%.1f", bmi),
+                style = MaterialTheme.typography.displayMedium,
+                color = MaterialTheme.colorScheme.primary
+            )
+            Text(
+                text = bmiCategory,
+                style = MaterialTheme.typography.titleLarge
+            )
+        } ?: run {
+            if (bmiCategory.isNotEmpty()) {
+                Text(
+                    text = bmiCategory,
+                    style = MaterialTheme.typography.bodyLarge
+                )
+            }
+        }
+    }
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
     <footer>
       &copy; 2026 Muhammad Hisyam Nurdy. Dibuat untuk pemenuhan tugas perkuliahan.
     </footer>
