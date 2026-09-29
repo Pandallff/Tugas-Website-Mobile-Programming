@@ -101,13 +101,8 @@
       margin-bottom: 0.7rem;
     }
 
-    .title-dark {
-      color: #111111;
-    }
-
-    .title-orange {
-      color: #F59E0B;
-    }
+    .title-dark { color: #111111; }
+    .title-orange { color: #F59E0B; }
 
     .icon {
       width: 18px;
@@ -284,6 +279,95 @@
       line-height: 1.5;
     }
 
+    /* Styling Fitur / Studi Kasus Cards */
+    .case-study-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #334155;
+    }
+
+    .case-study-box h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .feature-card h5 {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .feature-card p {
+      font-size: 0.82rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    /* Accordion / Tab untuk Kode Sumber Banyak File */
+    details.code-file {
+      background: #1e1e24;
+      border-radius: 10px;
+      margin-bottom: 0.8rem;
+      border: 1px solid #2d2d35;
+      overflow: hidden;
+    }
+
+    details.code-file summary {
+      padding: 10px 14px;
+      background: #18181b;
+      color: #38bdf8;
+      font-family: monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      user-select: none;
+      outline: none;
+    }
+
+    details.code-file summary:hover {
+      background: #27272a;
+    }
+
+    /* Grid Khusus 2 Screenshot Quiz */
+    .quiz-preview-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 640px) {
+      .quiz-preview-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -447,14 +531,12 @@
       </div>
 
       <div class="docs-grid">
-        <!-- Hasil Preview UI -->
         <div class="preview-box">
           <span style="font-size: 0.85rem; font-weight: 800; color: #1e293b;">Hasil Akhir UI (Preview)</span>
           <img src="tugas02-android.png" alt="Hasil Pratinjau Profile Card" />
           <span class="preview-caption">Tampilan Kartu Profil Mahasiswa</span>
         </div>
 
-        <!-- Kode Sumber MainActivity.kt -->
         <div class="mockup-window">
           <div class="window-bar">
             <span class="window-dot dot-red"></span>
@@ -610,14 +692,12 @@ fun StatusBadge(text: String) {
       </div>
 
       <div class="docs-grid">
-        <!-- Hasil Preview UI -->
         <div class="preview-box">
           <span style="font-size: 0.85rem; font-weight: 800; color: #1e293b;">Hasil Akhir UI (Preview)</span>
           <img src="tugas03-android.png" alt="Hasil Pratinjau Happy Birthday App" />
           <span class="preview-caption">Tampilan Happy Birthday Card</span>
         </div>
 
-        <!-- Kode Sumber MainActivity.kt -->
         <div class="mockup-window">
           <div class="window-bar">
             <span class="window-dot dot-red"></span>
@@ -717,14 +797,12 @@ fun BirthdayCardPreview() {
       </div>
 
       <div class="docs-grid">
-        <!-- Hasil Preview UI -->
         <div class="preview-box">
           <span style="font-size: 0.85rem; font-weight: 800; color: #1e293b;">Hasil Akhir UI (Preview)</span>
           <img src="tugas04-android.png" alt="Hasil Pratinjau Greeting Card App" />
           <span class="preview-caption">Tampilan Greeting Card Screen</span>
         </div>
 
-        <!-- Kode Sumber MainActivity.kt -->
         <div class="mockup-window">
           <div class="window-bar">
             <span class="window-dot dot-red"></span>
@@ -866,14 +944,12 @@ fun GreetingCardPreview() {
       </div>
 
       <div class="docs-grid">
-        <!-- Hasil Preview UI -->
         <div class="preview-box">
           <span style="font-size: 0.85rem; font-weight: 800; color: #1e293b;">Hasil Akhir UI (Preview)</span>
           <img src="tugas05-android.png" alt="Hasil Pratinjau Dice Roller App" />
           <span class="preview-caption">Tampilan Dice Roller Screen</span>
         </div>
 
-        <!-- Kode Sumber MainActivity.kt -->
         <div class="mockup-window">
           <div class="window-bar">
             <span class="window-dot dot-red"></span>
@@ -970,19 +1046,17 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
             </svg>
             <span>Dokumentasi Tugas 6: BMI Calculator App</span>
           </div>
-          <p class="docs-subtitle">Implementasi Jetpack Compose — Form Input, Calculation Logic & BMI Category State</p>
+          <p class="docs-subtitle">Implementasi Jetpack Compose — Form Input, Logic & BMI Category State</p>
         </div>
       </div>
 
       <div class="docs-grid">
-        <!-- Hasil Preview UI -->
         <div class="preview-box">
           <span style="font-size: 0.85rem; font-weight: 800; color: #1e293b;">Hasil Akhir UI (Preview)</span>
           <img src="tugas06-android.png" alt="Hasil Pratinjau BMI Calculator App" />
           <span class="preview-caption">Tampilan BMI Calculator Screen</span>
         </div>
 
-        <!-- Kode Sumber MainActivity.kt -->
         <div class="mockup-window">
           <div class="window-bar">
             <span class="window-dot dot-red"></span>
@@ -1161,6 +1235,809 @@ fun BMICalculatorApp() {
 }</code></pre>
         </div>
       </div>
+    </section>
+
+    <!-- DOKUMENTASI APLIKASI STUDENT MANAGER (QUIZ 1) -->
+    <section class="docs-section">
+      <div class="docs-header">
+        <div>
+          <div class="section-title title-dark" style="margin-bottom: 0.2rem;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>Tugas Besar / Quiz 1: Student Manager App</span>
+          </div>
+          <p class="docs-subtitle">Aplikasi Pengelolaan Data Mahasiswa Berbasis Kotlin & Jetpack Compose (MVVM Architecture)</p>
+        </div>
+      </div>
+
+      <!-- Preview Screenshots Quiz1 -->
+      <div class="quiz-preview-container">
+        <div class="preview-box">
+          <span style="font-size: 0.85rem; font-weight: 800; color: #1e293b;">Daftar Mahasiswa (Home)</span>
+          <img src="quiz1-1.png" alt="Quiz 1 - Daftar Mahasiswa" />
+          <span class="preview-caption">Tampilan Home Screen dengan Fitur Pencarian</span>
+        </div>
+        <div class="preview-box">
+          <span style="font-size: 0.85rem; font-weight: 800; color: #1e293b;">Form Edit Mahasiswa</span>
+          <img src="quiz1-2.png" alt="Quiz 1 - Edit Mahasiswa" />
+          <span class="preview-caption">Form Input & Edit Data Mahasiswa</span>
+        </div>
+      </div>
+
+      <!-- Deskripsi Studi Kasus -->
+      <div class="case-study-box">
+        <h4>📌 Deskripsi Studi Kasus</h4>
+        <p>
+          Aplikasi <strong>Student Manager</strong> dibangun untuk mempermudah institusi pendidikan atau pengelola data mahasiswa dalam mencatat, memperbarui, memfilter, serta mengorganisir data identitas mahasiswa secara efisien dan responsif. Aplikasi ini menerapkan konsep <strong>CRUD (Create, Read, Update, Delete)</strong> penuh berbasis antarmuka deklaratif Modern Android (Jetpack Compose Material 3) serta memanfaatkan arsitektur <strong>MVVM (Model-View-ViewModel)</strong> dengan Unidirectional Data Flow menggunakan StateFlow agar data selalu tersinkronisasi secara real-time.
+        </p>
+      </div>
+
+      <!-- Deskripsi Fitur Utama Berdasarkan Wireframe -->
+      <h4 style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem;">🚀 Fitur Utama Aplikasi</h4>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h5>⚡ 1. Splash Screen & Navigasi</h5>
+          <p>Layar animasi pembuka dengan logo Toga Mahasiswa (Custom Canvas) dan indikator pemuatan selama 2 detik sebelum masuk ke alur utama aplikasi.</p>
+        </div>
+        <div class="feature-card">
+          <h5>📋 2. Daftar Mahasiswa & Counter</h5>
+          <p>Menampilkan seluruh data mahasiswa terdaftar dalam daftar scrollable (LazyColumn) dilengkapi indikator total jumlah mahasiswa secara otomatis.</p>
+        </div>
+        <div class="feature-card">
+          <h5>🔍 3. Pencarian Real-Time</h5>
+          <p>Filter data pencarian pintar berbasis nama, NIM, atau Program Studi secara instant langsung dari kolom pencarian (OutlinedTextField).</p>
+        </div>
+        <div class="feature-card">
+          <h5>➕ 4. Form Tambah Mahasiswa</h5>
+          <p>Form interaktif untuk menambah data mahasiswa baru dilengkapi validasi input (NIM & Nama wajib diisi, serta pencegahan NIM duplikat).</p>
+        </div>
+        <div class="feature-card">
+          <h5>✏️ 5. Form Edit Mahasiswa</h5>
+          <p>Fasilitas pengubahan data identitas mahasiswa yang terisi otomatis berdasarkan ID mahasiswa yang dipilih dari layar utama.</p>
+        </div>
+        <div class="feature-card">
+          <h5>🗑️ 6. Konfirmasi Hapus Data</h5>
+          <p>Dialog modal pop-up konfirmasi berlatar merah untuk mencegah penghapusan data secara tidak sengaja.</p>
+        </div>
+        <div class="feature-card">
+          <h5>💡 7. Empty State View</h5>
+          <p>Umpan balik visual yang ramah ketika belum ada data terdaftar atau ketika kata kunci pencarian tidak ditemukan.</p>
+        </div>
+        <div class="feature-card">
+          <h5>⚙️ 8. Menu Overflow & Utility</h5>
+          <p>Akses cepat untuk memuat ulang sampel data (Reset/Refresh), melihat dialog informasi versi aplikasi (About), serta keluar dari aplikasi.</p>
+        </div>
+      </div>
+
+      <!-- Tampilan Berkas Kode Sumber (Source Code Manager) -->
+      <h4 style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem; margin-top: 2rem;">💻 Salinan Lengkap Kode Sumber (Source Code Files)</h4>
+
+      <details class="code-file" open>
+        <summary>1. MainActivity.kt (Entry Point)</summary>
+        <pre class="code-content"><code>package com.example.quiz1
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.ui.Modifier
+import com.example.quiz1.ui.navigation.StudentManagerApp
+import com.example.quiz1.ui.theme.Quiz1Theme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            Quiz1Theme {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background,
+                ) {
+                    StudentManagerApp()
+                }
+            }
+        }
+    }
+}</code></pre>
+      </details>
+
+      <details class="code-file">
+        <summary>2. Student.kt (Model)</summary>
+        <pre class="code-content"><code>package com.example.quiz1.model
+
+import java.util.UUID
+
+data class Student(
+    val id: String = UUID.randomUUID().toString(),
+    val nim: String,
+    val name: String,
+    val programStudi: String,
+)
+
+val PROGRAM_STUDI_LIST = listOf(
+    "Informatika",
+    "Sistem Informasi",
+    "Teknik Komputer",
+    "Desain Komunikasi Visual",
+    "Manajemen",
+    "Akuntansi",
+)</code></pre>
+      </details>
+
+      <details class="code-file">
+        <summary>3. StudentViewModel.kt (ViewModel)</summary>
+        <pre class="code-content"><code>package com.example.quiz1.viewmodel
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.quiz1.model.Student
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.stateIn
+
+class StudentViewModel : ViewModel() {
+
+    private val initialStudents = listOf(
+        Student(id = "1", nim = "2301001", name = "Budi Santoso", programStudi = "Informatika"),
+        Student(id = "2", nim = "2301002", name = "Siti Aminah", programStudi = "Sistem Informasi"),
+        Student(id = "3", nim = "2301003", name = "Andi Wijaya", programStudi = "Teknik Komputer"),
+    )
+
+    private val _students = MutableStateFlow(initialStudents)
+    val students: StateFlow&lt;List&lt;Student&gt;&gt; = _students.asStateFlow()
+
+    private val _searchQuery = MutableStateFlow("")
+    val searchQuery: StateFlow&lt;String&gt; = _searchQuery.asStateFlow()
+
+    val filteredStudents: StateFlow&lt;List&lt;Student&gt;&gt; = combine(_students, _searchQuery) { list, query -&gt;
+        if (query.isBlank()) {
+            list
+        } else {
+            val q = query.lowercase().trim()
+            list.filter { student -&gt;
+                student.name.lowercase().contains(q) ||
+                        student.nim.lowercase().contains(q) ||
+                        student.programStudi.lowercase().contains(q)
+            }
+        }
+    }.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(5000),
+        initialValue = initialStudents,
+    )
+
+    fun onSearchQueryChange(query: String) {
+        _searchQuery.value = query
+    }
+
+    fun addStudent(nim: String, name: String, programStudi: String): Result&lt;Unit&gt; {
+        val trimmedNim = nim.trim()
+        val trimmedName = name.trim()
+
+        if (trimmedNim.isEmpty()) {
+            return Result.failure(IllegalArgumentException("NIM tidak boleh kosong"))
+        }
+        if (trimmedName.isEmpty()) {
+            return Result.failure(IllegalArgumentException("Nama tidak boleh kosong"))
+        }
+        if (programStudi.isBlank() || (programStudi == "Pilih program studi")) {
+            return Result.failure(IllegalArgumentException("Silakan pilih program studi"))
+        }
+
+        if (_students.value.any { it.nim.equals(trimmedNim, ignoreCase = true) }) {
+            return Result.failure(IllegalArgumentException("NIM $trimmedNim sudah terdaftar"))
+        }
+
+        val newStudent = Student(
+            nim = trimmedNim,
+            name = trimmedName,
+            programStudi = programStudi,
+        )
+        _students.value += newStudent
+        return Result.success(Unit)
+    }
+
+    fun updateStudent(id: String, nim: String, name: String, programStudi: String): Result&lt;Unit&gt; {
+        val trimmedNim = nim.trim()
+        val trimmedName = name.trim()
+
+        if (trimmedNim.isEmpty()) {
+            return Result.failure(IllegalArgumentException("NIM tidak boleh kosong"))
+        }
+        if (trimmedName.isEmpty()) {
+            return Result.failure(IllegalArgumentException("Nama tidak boleh kosong"))
+        }
+        if (programStudi.isBlank() || (programStudi == "Pilih program studi")) {
+            return Result.failure(IllegalArgumentException("Silakan pilih program studi"))
+        }
+
+        if (_students.value.any { it.id != id && it.nim.equals(trimmedNim, ignoreCase = true) }) {
+            return Result.failure(IllegalArgumentException("NIM $trimmedNim sudah terdaftar pada mahasiswa lain"))
+        }
+
+        _students.value = _students.value.map { student -&gt;
+            if (student.id == id) {
+                student.copy(
+                    nim = trimmedNim,
+                    name = trimmedName,
+                    programStudi = programStudi,
+                )
+            } else {
+                student
+            }
+        }
+        return Result.success(Unit)
+    }
+
+    fun deleteStudent(id: String) {
+        _students.value = _students.value.filterNot { it.id == id }
+    }
+
+    fun getStudentById(id: String): Student? {
+        return _students.value.find { it.id == id }
+    }
+
+    fun resetToSampleData() {
+        _searchQuery.value = ""
+        _students.value = initialStudents
+    }
+}</code></pre>
+      </details>
+
+      <details class="code-file">
+        <summary>4. StudentManagerApp.kt (Navigation Graph)</summary>
+        <pre class="code-content"><code>package com.example.quiz1.ui.navigation
+
+import androidx.compose.runtime.Composable
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.example.quiz1.ui.screens.AddStudentScreen
+import com.example.quiz1.ui.screens.EditStudentScreen
+import com.example.quiz1.ui.screens.HomeScreen
+import com.example.quiz1.ui.screens.SplashScreen
+import com.example.quiz1.viewmodel.StudentViewModel
+
+@Composable
+fun StudentManagerApp(
+    viewModel: StudentViewModel = viewModel(),
+) {
+    val navController = rememberNavController()
+
+    NavHost(
+        navController = navController,
+        startDestination = "splash",
+    ) {
+        composable("splash") {
+            SplashScreen {
+                navController.navigate("home") {
+                    popUpTo("splash") { inclusive = true }
+                }
+            }
+        }
+        composable("home") {
+            HomeScreen(
+                viewModel = viewModel,
+                onNavigateToAdd = { navController.navigate("add_student") },
+                onNavigateToEdit = { studentId -&gt;
+                    navController.navigate("edit_student/$studentId")
+                },
+            )
+        }
+        composable("add_student") {
+            AddStudentScreen(
+                viewModel = viewModel,
+                onNavigateBack = { navController.popBackStack() },
+            )
+        }
+        composable(
+            route = "edit_student/{studentId}",
+            arguments = listOf(navArgument("studentId") { type = NavType.StringType }),
+        ) { backStackEntry -&gt;
+            val studentId = backStackEntry.arguments?.getString("studentId") ?: ""
+            EditStudentScreen(
+                studentId = studentId,
+                viewModel = viewModel,
+                onNavigateBack = { navController.popBackStack() },
+            )
+        }
+    }
+}</code></pre>
+      </details>
+
+      <details class="code-file">
+        <summary>5. HomeScreen.kt (Screen)</summary>
+        <pre class="code-content"><code>package com.example.quiz1.ui.screens
+
+import android.app.Activity
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ExitToApp
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.quiz1.model.Student
+import com.example.quiz1.ui.components.AboutAppDialog
+import com.example.quiz1.ui.components.DeleteConfirmationDialog
+import com.example.quiz1.ui.components.EmptyStateView
+import com.example.quiz1.ui.components.StudentItem
+import com.example.quiz1.viewmodel.StudentViewModel
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun HomeScreen(
+    viewModel: StudentViewModel,
+    onNavigateToAdd: () -&gt; Unit,
+    onNavigateToEdit: (String) -&gt; Unit,
+) {
+    val context = LocalContext.current
+    val searchQuery by viewModel.searchQuery.collectAsState()
+    val filteredStudents by viewModel.filteredStudents.collectAsState()
+
+    var showMenu by remember { mutableStateOf(false) }
+    var showAboutDialog by remember { mutableStateOf(false) }
+    var studentToDelete by remember { mutableStateOf&lt;Student?&gt;(null) }
+
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(
+                        text = "Student Manager",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 20.sp,
+                    )
+                },
+                actions = {
+                    IconButton(onClick = { showMenu = !showMenu }) {
+                        Icon(
+                            imageVector = Icons.Default.MoreVert,
+                            contentDescription = "Menu Opsional",
+                        )
+                    }
+                    DropdownMenu(
+                        expanded = showMenu,
+                        onDismissRequest = { showMenu = false },
+                    ) {
+                        DropdownMenuItem(
+                            text = { Text("Refresh") },
+                            leadingIcon = { Icon(Icons.Default.Refresh, contentDescription = null) },
+                            onClick = {
+                                showMenu = false
+                                viewModel.resetToSampleData()
+                            },
+                        )
+                        DropdownMenuItem(
+                            text = { Text("Tentang Aplikasi") },
+                            leadingIcon = { Icon(Icons.Default.Info, contentDescription = null) },
+                            onClick = {
+                                showMenu = false
+                                showAboutDialog = true
+                            },
+                        )
+                        DropdownMenuItem(
+                            text = { Text("Keluar") },
+                            leadingIcon = { Icon(Icons.AutoMirrored.Filled.ExitToApp, contentDescription = null) },
+                            onClick = {
+                                showMenu = false
+                                (context as? Activity)?.finish()
+                            },
+                        )
+                    }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    titleContentColor = MaterialTheme.colorScheme.onSurface,
+                ),
+            )
+        },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = onNavigateToAdd,
+                containerColor = MaterialTheme.colorScheme.primary,
+                contentColor = Color.White,
+                shape = RoundedCornerShape(16.dp),
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Add,
+                    contentDescription = "Tambah Mahasiswa",
+                )
+            }
+        },
+    ) { innerPadding -&gt;
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding),
+        ) {
+            OutlinedTextField(
+                value = searchQuery,
+                onValueChange = { viewModel.onSearchQueryChange(it) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp, vertical = 8.dp),
+                placeholder = { Text("Cari mahasiswa...") },
+                leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = "Search Icon") },
+                trailingIcon = {
+                    if (searchQuery.isNotEmpty()) {
+                        IconButton(onClick = { viewModel.onSearchQueryChange("") }) {
+                            Icon(imageVector = Icons.Default.Close, contentDescription = "Clear Search")
+                        }
+                    }
+                },
+                singleLine = true,
+                shape = RoundedCornerShape(24.dp),
+            )
+
+            Text(
+                text = "Jumlah mahasiswa: ${filteredStudents.size}",
+                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Medium),
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+            )
+
+            Spacer(modifier = Modifier.height(4.dp))
+
+            if (filteredStudents.isEmpty()) {
+                Box(modifier = Modifier.weight(1f)) {
+                    EmptyStateView(isSearchEmpty = searchQuery.isNotEmpty())
+                }
+            } else {
+                LazyColumn(
+                    modifier = Modifier.weight(1f),
+                    contentPadding = PaddingValues(bottom = 80.dp),
+                ) {
+                    items(
+                        items = filteredStudents,
+                        key = { student -&gt; student.id },
+                    ) { student -&gt;
+                        StudentItem(
+                            student = student,
+                            onEditClick = { onNavigateToEdit(student.id) },
+                            onDeleteClick = { studentToDelete = student },
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    studentToDelete?.let { student -&gt;
+        DeleteConfirmationDialog(
+            student = student,
+            onConfirm = {
+                viewModel.deleteStudent(student.id)
+                studentToDelete = null
+            },
+            onDismiss = { studentToDelete = null },
+        )
+    }
+
+    if (showAboutDialog) {
+        AboutAppDialog(onDismiss = { showAboutDialog = false })
+    }
+}</code></pre>
+      </details>
+
+      <details class="code-file">
+        <summary>6. AddStudentScreen.kt (Screen)</summary>
+        <pre class="code-content"><code>package com.example.quiz1.ui.screens
+
+import android.widget.Toast
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.quiz1.model.PROGRAM_STUDI_LIST
+import com.example.quiz1.viewmodel.StudentViewModel
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun AddStudentScreen(
+    viewModel: StudentViewModel,
+    onNavigateBack: () -&gt; Unit,
+) {
+    val context = LocalContext.current
+
+    var nim by remember { mutableStateOf("") }
+    var name by remember { mutableStateOf("") }
+    var programStudi by remember { mutableStateOf("") }
+
+    var expandedDropdown by remember { mutableStateOf(false) }
+    var errorMessage by remember { mutableStateOf&lt;String?&gt;(null) }
+
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(text = "Tambah Mahasiswa", fontWeight = FontWeight.Bold, fontSize = 20.sp) },
+                navigationIcon = {
+                    IconButton(onClick = onNavigateBack) {
+                        Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Kembali")
+                    }
+                },
+            )
+        },
+    ) { innerPadding -&gt;
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+                .padding(16.dp)
+                .verticalScroll(rememberScrollState()),
+        ) {
+            Text(text = "NIM", style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold))
+            Spacer(modifier = Modifier.height(6.dp))
+            OutlinedTextField(
+                value = nim,
+                onValueChange = { nim = it; errorMessage = null },
+                modifier = Modifier.fillMaxWidth(),
+                placeholder = { Text("Masukkan NIM") },
+                singleLine = true,
+                shape = RoundedCornerShape(8.dp),
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(text = "Nama", style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold))
+            Spacer(modifier = Modifier.height(6.dp))
+            OutlinedTextField(
+                value = name,
+                onValueChange = { name = it; errorMessage = null },
+                modifier = Modifier.fillMaxWidth(),
+                placeholder = { Text("Masukkan nama mahasiswa") },
+                singleLine = true,
+                shape = RoundedCornerShape(8.dp),
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(text = "Program Studi", style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold))
+            Spacer(modifier = Modifier.height(6.dp))
+            ExposedDropdownMenuBox(
+                expanded = expandedDropdown,
+                onExpandedChange = { expandedDropdown = !expandedDropdown },
+            ) {
+                OutlinedTextField(
+                    value = if (programStudi.isEmpty()) "Pilih program studi" else programStudi,
+                    onValueChange = {},
+                    readOnly = true,
+                    modifier = Modifier.fillMaxWidth().menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable),
+                    trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expandedDropdown) },
+                    shape = RoundedCornerShape(8.dp),
+                )
+
+                ExposedDropdownMenu(
+                    expanded = expandedDropdown,
+                    onDismissRequest = { expandedDropdown = false },
+                ) {
+                    PROGRAM_STUDI_LIST.forEach { option -&gt;
+                        DropdownMenuItem(
+                            text = { Text(option) },
+                            onClick = {
+                                programStudi = option
+                                expandedDropdown = false
+                                errorMessage = null
+                            },
+                        )
+                    }
+                }
+            }
+
+            errorMessage?.let { error -&gt;
+                Spacer(modifier = Modifier.height(12.dp))
+                Text(text = error, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall)
+            }
+
+            Spacer(modifier = Modifier.height(32.dp))
+
+            Row(modifier = Modifier.fillMaxWidth()) {
+                OutlinedButton(
+                    onClick = onNavigateBack,
+                    modifier = Modifier.weight(1f).height(48.dp),
+                    shape = RoundedCornerShape(8.dp),
+                ) { Text("Batal") }
+
+                Spacer(modifier = Modifier.width(16.dp))
+
+                Button(
+                    onClick = {
+                        val result = viewModel.addStudent(nim = nim, name = name, programStudi = programStudi)
+                        result.fold(
+                            onSuccess = {
+                                Toast.makeText(context, "Mahasiswa berhasil ditambahkan", Toast.LENGTH_SHORT).show()
+                                onNavigateBack()
+                            },
+                            onFailure = { throwable -&gt; errorMessage = throwable.message },
+                        )
+                    },
+                    modifier = Modifier.weight(1f).height(48.dp),
+                    shape = RoundedCornerShape(8.dp),
+                ) { Text("Simpan") }
+            }
+        }
+    }
+}</code></pre>
+      </details>
+
+      <details class="code-file">
+        <summary>7. EditStudentScreen.kt (Screen)</summary>
+        <pre class="code-content"><code>package com.example.quiz1.ui.screens
+
+import android.widget.Toast
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.quiz1.model.PROGRAM_STUDI_LIST
+import com.example.quiz1.viewmodel.StudentViewModel
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun EditStudentScreen(
+    studentId: String,
+    viewModel: StudentViewModel,
+    onNavigateBack: () -&gt; Unit,
+) {
+    val context = LocalContext.current
+    val student = viewModel.getStudentById(studentId)
+
+    var nim by remember { mutableStateOf(student?.nim ?: "") }
+    var name by remember { mutableStateOf(student?.name ?: "") }
+    var programStudi by remember { mutableStateOf(student?.programStudi ?: "") }
+
+    var expandedDropdown by remember { mutableStateOf(false) }
+    var errorMessage by remember { mutableStateOf&lt;String?&gt;(null) }
+
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(text = "Edit Mahasiswa", fontWeight = FontWeight.Bold, fontSize = 20.sp) },
+                navigationIcon = {
+                    IconButton(onClick = onNavigateBack) {
+                        Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Kembali")
+                    }
+                },
+            )
+        },
+    ) { innerPadding -&gt;
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+                .padding(16.dp)
+                .verticalScroll(rememberScrollState()),
+        ) {
+            Text(text = "NIM", style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold))
+            Spacer(modifier = Modifier.height(6.dp))
+            OutlinedTextField(
+                value = nim,
+                onValueChange = { nim = it; errorMessage = null },
+                modifier = Modifier.fillMaxWidth(),
+                placeholder = { Text("Masukkan NIM") },
+                singleLine = true,
+                shape = RoundedCornerShape(8.dp),
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(text = "Nama", style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold))
+            Spacer(modifier = Modifier.height(6.dp))
+            OutlinedTextField(
+                value = name,
+                onValueChange = { name = it; errorMessage = null },
+                modifier = Modifier.fillMaxWidth(),
+                placeholder = { Text("Masukkan nama mahasiswa") },
+                singleLine = true,
+                shape = RoundedCornerShape(8.dp),
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(text = "Program Studi", style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold))
+            Spacer(modifier = Modifier.height(6.dp))
+            ExposedDropdownMenuBox(
+                expanded = expandedDropdown,
+                onExpandedChange = { expandedDropdown = !expandedDropdown },
+            ) {
+                OutlinedTextField(
+                    value = if (programStudi.isEmpty()) "Pilih program studi" else programStudi,
+                    onValueChange = {},
+                    readOnly = true,
+                    modifier = Modifier.fillMaxWidth().menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable),
+                    trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expandedDropdown) },
+                    shape = RoundedCornerShape(8.dp),
+                )
+
+                ExposedDropdownMenu(
+                    expanded = expandedDropdown,
+                    onDismissRequest = { expandedDropdown = false },
+                ) {
+                    PROGRAM_STUDI_LIST.forEach { option -&gt;
+                        DropdownMenuItem(
+                            text = { Text(option) },
+                            onClick = {
+                                programStudi = option
+                                expandedDropdown = false
+                                errorMessage = null
+                            },
+                        )
+                    }
+                }
+            }
+
+            errorMessage?.let { error -&gt;
+                Spacer(modifier = Modifier.height(12.dp))
+                Text(text = error, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall)
+            }
+
+            Spacer(modifier = Modifier.height(32.dp))
+
+            Row(modifier = Modifier.fillMaxWidth()) {
+                OutlinedButton(
+                    onClick = onNavigateBack,
+                    modifier = Modifier.weight(1f).height(48.dp),
+                    shape = RoundedCornerShape(8.dp),
+                ) { Text("Batal") }
+
+                Spacer(modifier = Modifier.width(16.dp))
+
+                Button(
+                    onClick = {
+                        val result = viewModel.updateStudent(id = studentId, nim = nim, name = name, programStudi = programStudi)
+                        result.fold(
+                            onSuccess = {
+                                Toast.makeText(context, "Data mahasiswa berhasil diperbarui", Toast.LENGTH_SHORT).show()
+                                onNavigateBack()
+                            },
+                            onFailure = { throwable -&gt; errorMessage = throwable.message },
+                        )
+                    },
+                    modifier = Modifier.weight(1f).height(48.dp),
+                    shape = RoundedCornerShape(8.dp),
+                ) { Text("Simpan") }
+            }
+        }
+    }
+}</code></pre>
+      </details>
     </section>
 
     <footer>
