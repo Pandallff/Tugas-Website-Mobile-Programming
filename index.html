@@ -359,7 +359,29 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Tombol Video Demonstrasi Google Drive */
+    .video-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background-color: #2563eb;
+      color: #ffffff;
+      padding: 0.75rem 1.25rem;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    }
+
+    .video-btn:hover {
+      background-color: #1d4ed8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
     }
 
     @media (max-width: 640px) {
@@ -1263,6 +1285,17 @@ fun BMICalculatorApp() {
           <img src="quiz1-2.png" alt="Quiz 1 - Edit Mahasiswa" />
           <span class="preview-caption">Form Input & Edit Data Mahasiswa</span>
         </div>
+      </div>
+
+      <!-- Tombol Video Demonstrasi Google Drive -->
+      <div style="margin-bottom: 1.5rem;">
+        <a href="https://drive.google.com/drive/folders/1_nWN1sFsSD0Db4urpvccnPJbnm8HXmYW?usp=sharing" target="_blank" class="video-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+          </svg>
+          Tonton Video Demonstrasi Aplikasi (Google Drive)
+        </a>
       </div>
 
       <!-- Deskripsi Studi Kasus -->
