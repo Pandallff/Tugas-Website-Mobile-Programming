@@ -2073,6 +2073,178 @@ fun EditStudentScreen(
       </details>
     </section>
 
+    <!-- Dokumentasi Tugas 7: Halaman Login (SEKARANG DIBAWAH QUIZ 1) -->
+    <section class="docs-section">
+      <div class="docs-header">
+        <div>
+          <div class="section-title title-dark" style="margin-bottom: 0.2rem;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span>Dokumentasi Tugas 7: Halaman Login</span>
+          </div>
+          <p class="docs-subtitle">Implementasi Jetpack Compose — UI Halaman Login & Social Login Layout</p>
+        </div>
+      </div>
+
+      <div class="docs-grid">
+        <div class="preview-box">
+          <span style="font-size: 0.85rem; font-weight: 800; color: #1e293b;">Hasil Akhir UI (Preview)</span>
+          <img src="tugas07-android.png" alt="Hasil Pratinjau Halaman Login" />
+          <span class="preview-caption">Tampilan Login Screen</span>
+        </div>
+
+        <div class="mockup-window">
+          <div class="window-bar">
+            <span class="window-dot dot-red"></span>
+            <span class="window-dot dot-yellow"></span>
+            <span class="window-dot dot-green"></span>
+            <span class="window-title">LoginScreen.kt (Tugas 7)</span>
+          </div>
+          <pre class="code-content"><code>package com.example.halaman_login
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Button
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.halaman_login.ui.theme.Halaman_LoginTheme
+
+@Composable
+fun LoginScreen() {
+    var email by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
+
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.a),
+            contentDescription = "Login image",
+            modifier = Modifier.size(200.dp)
+        )
+
+        Text(
+            text = "Welcome Back",
+            fontSize = 28.sp,
+            fontWeight = FontWeight.Bold
+        )
+
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Text(text = "Login to your account")
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        OutlinedTextField(
+            value = email,
+            onValueChange = { email = it },
+            label = { Text(text = "Email address") }
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        OutlinedTextField(
+            value = password,
+            onValueChange = { password = it },
+            label = { Text(text = "Password") },
+            visualTransformation = PasswordVisualTransformation()
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Button(onClick = { }) {
+            Text(text = "Login")
+        }
+
+        Spacer(modifier = Modifier.height(32.dp))
+
+        Text(
+            text = "Forgot Password?",
+            modifier = Modifier.clickable { }
+        )
+
+        Spacer(modifier = Modifier.height(32.dp))
+
+        Text(text = "Or sign in with")
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(40.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.fb),
+                contentDescription = "Facebook",
+                modifier = Modifier
+                    .size(60.dp)
+                    .clickable {
+                        // Facebook clicked
+                    }
+            )
+
+            Image(
+                painter = painterResource(id = R.drawable.google),
+                contentDescription = "Google",
+                modifier = Modifier
+                    .size(60.dp)
+                    .clickable {
+                        // Google clicked
+                    }
+            )
+
+            Image(
+                painter = painterResource(id = R.drawable.twitter),
+                contentDescription = "Twitter",
+                modifier = Modifier
+                    .size(60.dp)
+                    .clickable {
+                        // Twitter clicked
+                    }
+            )
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun LoginScreenPreview() {
+    Halaman_LoginTheme {
+        LoginScreen()
+    }
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
     <footer>
       &copy; 2026 Muhammad Hisyam Nurdy. Dibuat untuk pemenuhan tugas perkuliahan.
     </footer>
