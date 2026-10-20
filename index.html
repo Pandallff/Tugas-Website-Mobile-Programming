@@ -2185,40 +2185,52 @@ fun EditStudentScreen(
         </div>
       </div>
 
-      <!-- Deskripsi Studi Kasus ETS -->
+      <!-- Deskripsi & Ruang Lingkup Sistem -->
       <div class="case-study-box">
-        <h4>📌 Ringkasan Studi Kasus ETS</h4>
-        <p>
-          Aplikasi <strong>LibraryReg</strong> dibangun untuk mengatasi kendala antrean panjang dan pencatatan manual pada pendaftaran anggota perpustakaan perguruan tinggi. Menerapkan arsitektur <strong>MVVM</strong>, StateFlow, serta Material Design 3, sistem ini mencakup formulir pendaftaran mandiri, validasi input otomatis (email & NIM/NIP unik), KTA Digital, serta manajemen data anggota (CRUD) lengkap.
+        <h4>📌 1. Deskripsi & Ruang Lingkup Aplikasi</h4>
+        <p style="margin-bottom: 0.6rem;">
+          <strong>A. Deskripsi Sistem:</strong> Perpustakaan perguruan tinggi sebelumnya menggunakan formulir kertas manual, menyebabkan antrean panjang, kesalahan pencatatan data, kesulitan pencarian informasi anggota, dan lambatnya pembuatan kartu anggota. <strong>LibraryReg</strong> hadir sebagai solusi aplikasi Android agar calon anggota dapat mendaftar mandiri melalui smartphone, serta mempermudah petugas dalam mengelola, mencari, mengubah, dan menghapus data anggota.
         </p>
+        <p>
+          <strong>B. Ruang Lingkup Aplikasi:</strong>
+        </p>
+        <ul style="padding-left: 1.2rem; margin-top: 0.3rem;">
+          <li><strong>Formulir Pendaftaran:</strong> Calon anggota mengisi Nama Lengkap, NIM/NIP, Program Studi, Alamat, Nomor Telepon, Email, dan Jenis Keanggotaan.</li>
+          <li><strong>Validasi Data:</strong> Pemeriksaan kolom wajib (<em>required</em>), format email yang valid, serta keunikan NIM/NIP.</li>
+          <li><strong>Manajemen Anggota (CRUD):</strong> Petugas dapat melihat daftar anggota, mencari berdasarkan nama/NIM, melihat detail (KTA Digital), mengedit, dan menghapus data.</li>
+        </ul>
       </div>
 
-      <!-- Fitur Utama ETS -->
-      <h4 style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem;">🚀 Cakupan Fitur Aplikasi</h4>
+      <!-- Fitur Utama ETS (Penjelasan Detail) -->
+      <h4 style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem;">🚀 2. Penjelasan Detail Tiap Fitur Aplikasi</h4>
       <div class="feature-grid">
         <div class="feature-card">
-          <h5>📱 1. Dashboard Navigasi</h5>
-          <p>Layar utama interaktif dengan rangkuman informasi serta kartu menu cepat menuju formulir dan daftar anggota.</p>
+          <h5>📱 A. Dashboard Menu Utama (HomeScreen)</h5>
+          <p>Sebagai pusat navigasi utama bagi pengguna dan petugas perpustakaan. Dilengkapi banner sambutan serta kartu akses cepat menuju 4 fitur utama: Formulir Pendaftaran, Daftar Anggota, Pencarian Data, dan Profil / Bantuan.</p>
         </div>
         <div class="feature-card">
-          <h5>📝 2. Formulir Pendaftaran</h5>
-          <p>Input data calon anggota dilengkapi validasi email, verifikasi NIM/NIP unik, serta pilihan jenis keanggotaan.</p>
+          <h5>📝 B. Formulir Pendaftaran (RegistrationScreen)</h5>
+          <p>Memungkinkan calon anggota mendaftar mandiri. Menggunakan input teks & dropdown interaktif (Mahasiswa, Dosen, Umum) dengan validasi otomatis kolom wajib, format email sah, dan pencegahan duplikasi NIM/NIP.</p>
         </div>
         <div class="feature-card">
-          <h5>💳 3. KTA Digital</h5>
-          <p>Tampilan Kartu Tanda Anggota Digital bergaya modern lengkap dengan status keanggotaan dan ID unik.</p>
+          <h5>📋 C. Daftar Anggota (MemberListScreen)</h5>
+          <p>Memungkinkan petugas mengelola data secara rapi dan bernomor. Dilengkapi tombol aksi per anggota: Detail (melihat KTA Digital), Edit (mengubah data), dan Hapus (dialog konfirmasi), serta Floating Action Button (FAB).</p>
         </div>
         <div class="feature-card">
-          <h5>🔎 4. Pencarian & Manajemen CRUD</h5>
-          <p>Fitur pencarian real-time berdasarkan Nama/NIM serta tombol aksi cepat untuk Mengedit, Melihat Detail, dan Menghapus data.</p>
+          <h5>🔎 D. Pencarian Data (SearchScreen)</h5>
+          <p>Layar khusus pencarian instan berbasis nama lengkap, NIM/NIP, atau Program Studi secara real-time dengan umpan balik visual jumlah hasil pencarian.</p>
+        </div>
+        <div class="feature-card">
+          <h5>ℹ️ E. Profil & Bantuan (ProfileHelpScreen)</h5>
+          <p>Menyediakan ringkasan statistik total anggota terdaftar, panduan langkah demi langkah penggunaan aplikasi, serta informasi pengembang dan teknologi (Jetpack Compose, MVVM, Material 3).</p>
         </div>
       </div>
 
       <!-- Source Code ETS Accordion -->
-      <h4 style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem; margin-top: 2rem;">💻 Salinan Berkas Kode Sumber ETS (Source Code)</h4>
+      <h4 style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem; margin-top: 2rem;">💻 3. Salinan Berkas Kode Sumber ETS (Source Code)</h4>
 
       <details class="code-file" open>
-        <summary>1. Member.kt (Data Model)</summary>
+        <summary>A. Data Model (Member.kt)</summary>
         <pre class="code-content"><code>package com.example.ets_ppb.data
 
 import java.util.UUID
@@ -2236,7 +2248,7 @@ data class Member(
       </details>
 
       <details class="code-file">
-        <summary>2. LibraryViewModel.kt (ViewModel & Logic)</summary>
+        <summary>B. ViewModel (LibraryViewModel.kt)</summary>
         <pre class="code-content"><code>package com.example.ets_ppb.viewmodel
 
 import androidx.compose.runtime.getValue
@@ -2270,6 +2282,15 @@ class LibraryViewModel : ViewModel() {
                 phoneNumber = "081987654321",
                 email = "siti.aisyah@student.ac.id",
                 membershipType = "Mahasiswa"
+            ),
+            Member(
+                fullName = "Budi Santoso, M.Kom.",
+                studentId = "19850101",
+                studyProgram = "Teknik Informatika (Dosen)",
+                address = "Perum Griya Asri Blok C-3",
+                phoneNumber = "081112223334",
+                email = "budi.santoso@lecturer.ac.id",
+                membershipType = "Dosen"
             )
         )
     )
@@ -2380,7 +2401,26 @@ class LibraryViewModel : ViewModel() {
       </details>
 
       <details class="code-file">
-        <summary>3. HomeScreen.kt (Dashboard UI)</summary>
+        <summary>C. Navigasi (Screen.kt)</summary>
+        <pre class="code-content"><code>package com.example.ets_ppb.ui.navigation
+
+sealed class Screen(val route: String) {
+    object Home : Screen("home")
+    object Registration : Screen("registration")
+    object MemberList : Screen("member_list")
+    object Search : Screen("search")
+    object ProfileHelp : Screen("profile_help")
+    object DetailMember : Screen("detail_member/{memberId}") {
+        fun createRoute(memberId: String) = "detail_member/$memberId"
+    }
+    object EditMember : Screen("edit_member/{memberId}") {
+        fun createRoute(memberId: String) = "edit_member/$memberId"
+    }
+}</code></pre>
+      </details>
+
+      <details class="code-file">
+        <summary>D. Dashboard (HomeScreen.kt)</summary>
         <pre class="code-content"><code>package com.example.ets_ppb.ui.screens
 
 import androidx.compose.foundation.background
@@ -2388,8 +2428,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.List
-import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -2399,15 +2439,18 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.ets_ppb.ui.theme.ETS_PPBTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     onNavigateToRegistration: () -> Unit,
     onNavigateToMemberList: () -> Unit,
-    onNavigateToSearch: () -> Unit
+    onNavigateToSearch: () -> Unit,
+    onNavigateToProfileHelp: () -> Unit
 ) {
     Scaffold(
         topBar = {
@@ -2418,25 +2461,12 @@ fun HomeScreen(
                         Text("Aplikasi Pendaftaran Anggota Perpustakaan", fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
                 },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer
-                )
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
             )
         }
     ) { innerPadding ->
         Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding)
-                .background(
-                    Brush.verticalGradient(
-                        listOf(
-                            MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.3f),
-                            MaterialTheme.colorScheme.background
-                        )
-                    )
-                )
-                .padding(16.dp),
+            modifier = Modifier.fillMaxSize().padding(innerPadding).background(Brush.verticalGradient(listOf(MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.3f), MaterialTheme.colorScheme.background))).padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Card(
@@ -2444,64 +2474,31 @@ fun HomeScreen(
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primary),
                 shape = RoundedCornerShape(16.dp)
             ) {
-                Column(
-                    modifier = Modifier.padding(20.dp),
-                    verticalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    Text(
-                        text = "Selamat Datang di LibraryReg 👋",
-                        style = MaterialTheme.typography.titleLarge,
-                        color = MaterialTheme.colorScheme.onPrimary,
-                        fontWeight = FontWeight.Bold
-                    )
-                    Text(
-                        text = "Solusi digital pendaftaran dan manajemen keanggotaan perpustakaan perguruan tinggi secara cepat, akurat, dan terintegrasi.",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.9f)
-                    )
+                Column(modifier = Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Text("Selamat Datang di LibraryReg 👋", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onPrimary, fontWeight = FontWeight.Bold)
+                    Text("Solusi digital pendaftaran dan manajemen keanggotaan perpustakaan perguruan tinggi secara cepat, akurat, dan terintegrasi.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.9f))
                 }
             }
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            Text(
-                text = "Menu Utama",
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.primary
-            )
+            Text("Menu Utama", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
 
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(16.dp)
-            ) {
-                MenuCard(
-                    title = "Formulir Pendaftaran",
-                    subtitle = "Daftar anggota baru",
-                    icon = Icons.Default.Add,
-                    modifier = Modifier.weight(1f),
-                    onClick = onNavigateToRegistration
-                )
-                MenuCard(
-                    title = "Daftar Anggota",
-                    subtitle = "Lihat & kelola data",
-                    icon = Icons.Default.List,
-                    modifier = Modifier.weight(1f),
-                    onClick = onNavigateToMemberList
-                )
+            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                MenuCard("Formulir Pendaftaran", "Daftar anggota baru", Icons.Default.Add, Modifier.weight(1f), onNavigateToRegistration)
+                MenuCard("Daftar Anggota", "Lihat & kelola data", Icons.Default.List, Modifier.weight(1f), onNavigateToMemberList)
+            }
+
+            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                MenuCard("Pencarian Data", "Cari via NIM / Nama", Icons.Default.Search, Modifier.weight(1f), onNavigateToSearch)
+                MenuCard("Profil / Bantuan", "Panduan & info", Icons.Default.Info, Modifier.weight(1f), onNavigateToProfileHelp)
             }
         }
     }
 }
 
 @Composable
-fun MenuCard(
-    title: String,
-    subtitle: String,
-    icon: ImageVector,
-    modifier: Modifier = Modifier,
-    onClick: () -> Unit
-) {
+fun MenuCard(title: String, subtitle: String, icon: ImageVector, modifier: Modifier = Modifier, onClick: () -> Unit) {
     Card(
         onClick = onClick,
         modifier = modifier.height(130.dp),
@@ -2509,20 +2506,211 @@ fun MenuCard(
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
-        Column(
-            modifier = Modifier.fillMaxSize().padding(16.dp),
-            verticalArrangement = Arrangement.SpaceBetween
-        ) {
-            Box(
-                modifier = Modifier.size(40.dp).clip(RoundedCornerShape(8.dp)).background(MaterialTheme.colorScheme.primaryContainer),
-                contentAlignment = Alignment.Center
-            ) {
+        Column(modifier = Modifier.fillMaxSize().padding(16.dp), verticalArrangement = Arrangement.SpaceBetween) {
+            Box(modifier = Modifier.size(40.dp).clip(RoundedCornerShape(8.dp)).background(MaterialTheme.colorScheme.primaryContainer), contentAlignment = Alignment.Center) {
                 Icon(imageVector = icon, contentDescription = title, tint = MaterialTheme.colorScheme.primary)
             }
             Column {
                 Text(text = title, style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
                 Text(text = subtitle, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
+        }
+    }
+}</code></pre>
+      </details>
+
+      <details class="code-file">
+        <summary>E. Layar Pencarian Data (SearchScreen.kt)</summary>
+        <pre class="code-content"><code>package com.example.ets_ppb.ui.screens
+
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import com.example.ets_ppb.viewmodel.LibraryViewModel
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun SearchScreen(
+    viewModel: LibraryViewModel,
+    onNavigateBack: () -> Unit,
+    onNavigateToDetail: (String) -> Unit
+) {
+    val searchResults = viewModel.filteredMembers
+
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("Pencarian Data Anggota", fontWeight = FontWeight.Bold) },
+                navigationIcon = {
+                    IconButton(onClick = onNavigateBack) {
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Kembali")
+                    }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
+            )
+        }
+    ) { innerPadding ->
+        Column(
+            modifier = Modifier.fillMaxSize().padding(innerPadding).padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            Text("Cari data anggota perpustakaan berdasarkan Nama Lengkap, Nomor Induk (NIM/NIP), atau Program Studi.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+
+            OutlinedTextField(
+                value = viewModel.searchQuery,
+                onValueChange = { viewModel.updateSearchQuery(it) },
+                label = { Text("Masukkan Nama / NIM / NIP...") },
+                leadingIcon = { Icon(Icons.Default.Search, null) },
+                trailingIcon = {
+                    if (viewModel.searchQuery.isNotEmpty()) {
+                        IconButton(onClick = { viewModel.updateSearchQuery("") }) { Icon(Icons.Default.Clear, null) }
+                    }
+                },
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true
+            )
+
+            Card(modifier = Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer)) {
+                Row(modifier = Modifier.padding(16.dp), horizontalArrangement = Arrangement.spacedBy(12.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Icon(Icons.Default.Info, null, tint = MaterialTheme.colorScheme.onSecondaryContainer)
+                    Text("Ditemukan ${searchResults.size} hasil pencarian.", style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSecondaryContainer)
+                }
+            }
+
+            if (searchResults.isEmpty()) {
+                Box(modifier = Modifier.fillMaxSize().weight(1f), contentAlignment = Alignment.Center) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Icon(Icons.Default.SearchOff, null, modifier = Modifier.size(64.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text("Tidak ada anggota yang cocok dengan kata kunci", style = MaterialTheme.typography.bodyLarge)
+                    }
+                }
+            } else {
+                LazyColumn(modifier = Modifier.fillMaxSize().weight(1f), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                    itemsIndexed(searchResults) { _, member ->
+                        Card(
+                            onClick = { onNavigateToDetail(member.id) },
+                            modifier = Modifier.fillMaxWidth(),
+                            shape = MaterialTheme.shapes.medium,
+                            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
+                        ) {
+                            Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
+                                    Text(text = member.fullName, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                                    Surface(shape = MaterialTheme.shapes.small, color = MaterialTheme.colorScheme.primaryContainer) {
+                                        Text(text = member.membershipType, modifier = Modifier.padding(horizontal = 8.dp, vertical = 2.dp), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.primary)
+                                    }
+                                }
+                                Text(text = "NIM/NIP: ${member.studentId} • ${member.studyProgram}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                Text(text = "Email: ${member.email} • Telp: ${member.phoneNumber}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}</code></pre>
+      </details>
+
+      <details class="code-file">
+        <summary>F. Layar Profil & Bantuan (ProfileHelpScreen.kt)</summary>
+        <pre class="code-content"><code>package com.example.ets_ppb.ui.screens
+
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.HelpOutline
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import com.example.ets_ppb.viewmodel.LibraryViewModel
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun ProfileHelpScreen(
+    viewModel: LibraryViewModel,
+    onNavigateBack: () -> Unit
+) {
+    val members by viewModel.members.collectAsState()
+    val totalMembers = members.size
+
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("Profil & Bantuan", fontWeight = FontWeight.Bold) },
+                navigationIcon = {
+                    IconButton(onClick = onNavigateBack) {
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Kembali")
+                    }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
+            )
+        }
+    ) { innerPadding ->
+        Column(
+            modifier = Modifier.fillMaxSize().padding(innerPadding).verticalScroll(rememberScrollState()).padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            Card(modifier = Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer)) {
+                Column(modifier = Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                        Icon(Icons.Default.LocalLibrary, null, modifier = Modifier.size(36.dp), tint = MaterialTheme.colorScheme.primary)
+                        Column {
+                            Text("LibraryReg v1.0", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onPrimaryContainer)
+                            Text("Aplikasi Pendaftaran & Manajemen Anggota Perpustakaan", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f))
+                        }
+                    }
+                    HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
+                    Text("Total Anggota Terdaftar saat ini: $totalMembers orang", style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.primary)
+                }
+            }
+
+            Card(modifier = Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)) {
+                Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Icon(Icons.AutoMirrored.Filled.HelpOutline, null, tint = MaterialTheme.colorScheme.primary)
+                        Text("Panduan Penggunaan Aplikasi", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+                    }
+                    HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
+
+                    HelpItem("1", "Formulir Pendaftaran", "Calon anggota mengisi formulir dengan data diri lengkap (Nama, NIM/NIP, Prodi, Alamat, Email, No Telepon, & Jenis Keanggotaan).")
+                    HelpItem("2", "Validasi Otomatis", "Sistem memeriksa kelengkapan data, format email yang valid, serta memastikan NIM/NIP tidak duplikat.")
+                    HelpItem("3", "Manajemen & Pencarian", "Petugas dapat melihat seluruh daftar anggota, melakukan pencarian instan berdasarkan nama atau NIM, melihat KTA digital, mengedit, atau menghapus data.")
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun HelpItem(step: String, title: String, description: String) {
+    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp), verticalAlignment = Alignment.Top) {
+        Surface(shape = MaterialTheme.shapes.small, color = MaterialTheme.colorScheme.primary) {
+            Box(modifier = Modifier.size(24.dp), contentAlignment = Alignment.Center) {
+                Text(text = step, color = MaterialTheme.colorScheme.onPrimary, style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold)
+            }
+        }
+        Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+            Text(text = title, style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
+            Text(text = description, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
     }
 }</code></pre>
