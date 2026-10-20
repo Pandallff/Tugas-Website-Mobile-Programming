@@ -29,7 +29,7 @@
       padding: 1.5rem 1.5rem 3rem 1.5rem;
     }
 
-    /* Sticky Nav Bar untuk Kemudahan Akses Dosen */
+    /* Sticky Nav Bar */
     .nav-bar {
       position: sticky;
       top: 1rem;
@@ -255,7 +255,7 @@
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 1.5rem;
+      padding: 1.25rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -263,12 +263,12 @@
     }
 
     .preview-box img {
-      max-width: 220px;
+      max-width: 200px;
       width: 100%;
       height: auto;
       border-radius: 12px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-      margin-top: 1rem;
+      margin-top: 0.75rem;
     }
 
     .preview-caption {
@@ -405,11 +405,18 @@
       background: #27272a;
     }
 
-    /* Grid Khusus Preview Screenshot */
+    /* Grid Preview Screenshot */
     .quiz-preview-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .ets-preview-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
       margin-bottom: 1.5rem;
     }
 
@@ -436,7 +443,7 @@
     }
 
     @media (max-width: 640px) {
-      .quiz-preview-container {
+      .quiz-preview-container, .ets-preview-container {
         grid-template-columns: 1fr;
       }
     }
@@ -2148,11 +2155,34 @@ fun EditStudentScreen(
         </div>
       </div>
 
-      <!-- Preview Image ETS -->
-      <div class="preview-box" style="margin-bottom: 1.5rem;">
-        <span style="font-size: 0.85rem; font-weight: 800; color: #1e293b;">Tampilan Antarmuka Aplikasi LibraryReg</span>
-        <img src="ETS.png" alt="LibraryReg ETS Preview" style="max-width: 280px;" />
-        <span class="preview-caption">Dashboard Utama & Menu Navigasi LibraryReg</span>
+      <!-- Galeri 5 Gambar ETS (ETS.png - ETS4.png) -->
+      <h4 style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem;">🎨 Desain Antarmuka Pengguna (UI Screenshots)</h4>
+      <div class="ets-preview-container">
+        <div class="preview-box">
+          <span style="font-size: 0.8rem; font-weight: 800; color: #1e293b;">1. ETS (Dashboard Utama)</span>
+          <img src="ETS.png" alt="ETS - Dashboard Utama" />
+          <span class="preview-caption">Dashboard & Navigasi Utama</span>
+        </div>
+        <div class="preview-box">
+          <span style="font-size: 0.8rem; font-weight: 800; color: #1e293b;">2. ETS 1 (Formulir Pendaftaran)</span>
+          <img src="ETS1.png" alt="ETS 1 - Form Pendaftaran" />
+          <span class="preview-caption">Form Input & Validasi Data</span>
+        </div>
+        <div class="preview-box">
+          <span style="font-size: 0.8rem; font-weight: 800; color: #1e293b;">3. ETS 2 (Daftar Anggota)</span>
+          <img src="ETS2.png" alt="ETS 2 - Daftar Anggota" />
+          <span class="preview-caption">Daftar List Anggota & Aksi</span>
+        </div>
+        <div class="preview-box">
+          <span style="font-size: 0.8rem; font-weight: 800; color: #1e293b;">4. ETS 3 (Pencarian Data)</span>
+          <img src="ETS3.png" alt="ETS 3 - Pencarian Data" />
+          <span class="preview-caption">Pencarian Real-Time Anggota</span>
+        </div>
+        <div class="preview-box">
+          <span style="font-size: 0.8rem; font-weight: 800; color: #1e293b;">5. ETS 4 (Profil & Bantuan)</span>
+          <img src="ETS4.png" alt="ETS 4 - Profil dan Bantuan" />
+          <span class="preview-caption">Panduan & Info Sistem</span>
+        </div>
       </div>
 
       <!-- Deskripsi Studi Kasus ETS -->
