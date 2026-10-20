@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammad Hisyam Nurdy - Portfolio</title>
+  <title>Muhammad Hisyam Nurdy - Portfolio & Portfolio Tugas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
@@ -14,6 +14,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: #fafafa;
@@ -22,7 +26,53 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 3rem 1.5rem;
+      padding: 1.5rem 1.5rem 3rem 1.5rem;
+    }
+
+    /* Sticky Nav Bar untuk Kemudahan Akses Dosen */
+    .nav-bar {
+      position: sticky;
+      top: 1rem;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      border: 1px solid #e2e8f0;
+      border-radius: 50px;
+      padding: 0.6rem 1.2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1060px;
+      width: 100%;
+    }
+
+    .nav-btn {
+      text-decoration: none;
+      color: #334155;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.4rem 0.85rem;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+      background: #f1f5f9;
+    }
+
+    .nav-btn:hover {
+      background-color: #F59E0B;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .nav-btn.highlight {
+      background-color: #2563eb;
+      color: #ffffff;
+    }
+
+    .nav-btn.highlight:hover {
+      background-color: #1d4ed8;
     }
 
     .main-wrapper {
@@ -30,7 +80,7 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 3.5rem;
+      gap: 3rem;
     }
 
     /* Profil Hero */
@@ -176,6 +226,7 @@
       border-radius: 20px;
       padding: 2.2rem;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      scroll-margin-top: 5rem;
     }
 
     .docs-header {
@@ -354,7 +405,7 @@
       background: #27272a;
     }
 
-    /* Grid Khusus 2 Screenshot Quiz */
+    /* Grid Khusus Preview Screenshot */
     .quiz-preview-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -427,9 +478,23 @@
 </head>
 <body>
 
+  <!-- Menu Navigasi Instan untuk Dosen -->
+  <nav class="nav-bar">
+    <a href="#profile" class="nav-btn">Profil</a>
+    <a href="#tugas1" class="nav-btn">Tugas 1</a>
+    <a href="#tugas2" class="nav-btn">Tugas 2</a>
+    <a href="#tugas3" class="nav-btn">Tugas 3</a>
+    <a href="#tugas4" class="nav-btn">Tugas 4</a>
+    <a href="#tugas5" class="nav-btn">Tugas 5</a>
+    <a href="#tugas6" class="nav-btn">Tugas 6</a>
+    <a href="#quiz1" class="nav-btn highlight">Quiz 1</a>
+    <a href="#ets" class="nav-btn highlight">ETS</a>
+    <a href="#tugas7" class="nav-btn">Tugas 7</a>
+  </nav>
+
   <div class="main-wrapper">
     <!-- Card Profil -->
-    <div class="profile-card">
+    <div class="profile-card" id="profile">
       <div class="photo-wrapper">
         <img src="profile.png" alt="Muhammad Hisyam Nurdy" />
       </div>
@@ -511,8 +576,8 @@
       </div>
     </div>
 
-    <!-- Dokumentasi Tugas 1: Hello Android -->
-    <section class="docs-section">
+    <!-- Dokumentasi Tugas 1 -->
+    <section class="docs-section" id="tugas1">
       <div class="docs-header">
         <div>
           <div class="section-title title-dark" style="margin-bottom: 0.2rem;">
@@ -537,8 +602,8 @@
       </div>
     </section>
 
-    <!-- Dokumentasi Tugas 2: Profile Card -->
-    <section class="docs-section">
+    <!-- Dokumentasi Tugas 2 -->
+    <section class="docs-section" id="tugas2">
       <div class="docs-header">
         <div>
           <div class="section-title title-dark" style="margin-bottom: 0.2rem;">
@@ -698,8 +763,8 @@ fun StatusBadge(text: String) {
       </div>
     </section>
 
-    <!-- Dokumentasi Tugas 3: Happy Birthday App -->
-    <section class="docs-section">
+    <!-- Dokumentasi Tugas 3 -->
+    <section class="docs-section" id="tugas3">
       <div class="docs-header">
         <div>
           <div class="section-title title-dark" style="margin-bottom: 0.2rem;">
@@ -804,8 +869,8 @@ fun BirthdayCardPreview() {
       </div>
     </section>
 
-    <!-- Dokumentasi Tugas 4: Greeting Card App -->
-    <section class="docs-section">
+    <!-- Dokumentasi Tugas 4 -->
+    <section class="docs-section" id="tugas4">
       <div class="docs-header">
         <div>
           <div class="section-title title-dark" style="margin-bottom: 0.2rem;">
@@ -946,8 +1011,8 @@ fun GreetingCardPreview() {
       </div>
     </section>
 
-    <!-- Dokumentasi Tugas 5: Dice Roller App (Dadu) -->
-    <section class="docs-section">
+    <!-- Dokumentasi Tugas 5 -->
+    <section class="docs-section" id="tugas5">
       <div class="docs-header">
         <div>
           <div class="section-title title-dark" style="margin-bottom: 0.2rem;">
@@ -1058,8 +1123,8 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
       </div>
     </section>
 
-    <!-- Dokumentasi Tugas 6: BMI Calculator App -->
-    <section class="docs-section">
+    <!-- Dokumentasi Tugas 6 -->
+    <section class="docs-section" id="tugas6">
       <div class="docs-header">
         <div>
           <div class="section-title title-dark" style="margin-bottom: 0.2rem;">
@@ -1259,21 +1324,20 @@ fun BMICalculatorApp() {
       </div>
     </section>
 
-    <!-- DOKUMENTASI APLIKASI STUDENT MANAGER (QUIZ 1) -->
-    <section class="docs-section">
+    <!-- Quiz 1: Student Manager App -->
+    <section class="docs-section" id="quiz1">
       <div class="docs-header">
         <div>
           <div class="section-title title-dark" style="margin-bottom: 0.2rem;">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
             </svg>
-            <span>Tugas Besar / Quiz 1: Student Manager App</span>
+            <span>Quiz 1: Student Manager App</span>
           </div>
           <p class="docs-subtitle">Aplikasi Pengelolaan Data Mahasiswa Berbasis Kotlin & Jetpack Compose (MVVM Architecture)</p>
         </div>
       </div>
 
-      <!-- Preview Screenshots Quiz1 -->
       <div class="quiz-preview-container">
         <div class="preview-box">
           <span style="font-size: 0.85rem; font-weight: 800; color: #1e293b;">Daftar Mahasiswa (Home)</span>
@@ -1287,7 +1351,6 @@ fun BMICalculatorApp() {
         </div>
       </div>
 
-      <!-- Tombol Video Demonstrasi Google Drive -->
       <div style="margin-bottom: 1.5rem;">
         <a href="https://drive.google.com/drive/folders/1_nWN1sFsSD0Db4urpvccnPJbnm8HXmYW?usp=sharing" target="_blank" class="video-btn">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1298,7 +1361,6 @@ fun BMICalculatorApp() {
         </a>
       </div>
 
-      <!-- Deskripsi Studi Kasus -->
       <div class="case-study-box">
         <h4>📌 Deskripsi Studi Kasus</h4>
         <p>
@@ -1306,7 +1368,6 @@ fun BMICalculatorApp() {
         </p>
       </div>
 
-      <!-- Deskripsi Fitur Utama Berdasarkan Wireframe -->
       <h4 style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem;">🚀 Fitur Utama Aplikasi</h4>
       <div class="feature-grid">
         <div class="feature-card">
@@ -1343,7 +1404,6 @@ fun BMICalculatorApp() {
         </div>
       </div>
 
-      <!-- Tampilan Berkas Kode Sumber (Source Code Manager) -->
       <h4 style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem; margin-top: 2rem;">💻 Salinan Lengkap Kode Sumber (Source Code Files)</h4>
 
       <details class="code-file" open>
@@ -2073,8 +2133,374 @@ fun EditStudentScreen(
       </details>
     </section>
 
-    <!-- Dokumentasi Tugas 7: Halaman Login (SEKARANG DIBAWAH QUIZ 1) -->
-    <section class="docs-section">
+    <!-- EVALUASI TENGAH SEMESTER (ETS): LibraryReg App -->
+    <section class="docs-section" id="ets">
+      <div class="docs-header">
+        <div>
+          <div class="section-title title-dark" style="margin-bottom: 0.2rem;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            <span>Evaluasi Tengah Semester (ETS): LibraryReg App</span>
+          </div>
+          <p class="docs-subtitle">Aplikasi Pendaftaran & Management Keanggotaan Perpustakaan (Jetpack Compose & MVVM)</p>
+        </div>
+      </div>
+
+      <!-- Preview Image ETS -->
+      <div class="preview-box" style="margin-bottom: 1.5rem;">
+        <span style="font-size: 0.85rem; font-weight: 800; color: #1e293b;">Tampilan Antarmuka Aplikasi LibraryReg</span>
+        <img src="ETS.png" alt="LibraryReg ETS Preview" style="max-width: 280px;" />
+        <span class="preview-caption">Dashboard Utama & Menu Navigasi LibraryReg</span>
+      </div>
+
+      <!-- Deskripsi Studi Kasus ETS -->
+      <div class="case-study-box">
+        <h4>📌 Ringkasan Studi Kasus ETS</h4>
+        <p>
+          Aplikasi <strong>LibraryReg</strong> dibangun untuk mengatasi kendala antrean panjang dan pencatatan manual pada pendaftaran anggota perpustakaan perguruan tinggi. Menerapkan arsitektur <strong>MVVM</strong>, StateFlow, serta Material Design 3, sistem ini mencakup formulir pendaftaran mandiri, validasi input otomatis (email & NIM/NIP unik), KTA Digital, serta manajemen data anggota (CRUD) lengkap.
+        </p>
+      </div>
+
+      <!-- Fitur Utama ETS -->
+      <h4 style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem;">🚀 Cakupan Fitur Aplikasi</h4>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h5>📱 1. Dashboard Navigasi</h5>
+          <p>Layar utama interaktif dengan rangkuman informasi serta kartu menu cepat menuju formulir dan daftar anggota.</p>
+        </div>
+        <div class="feature-card">
+          <h5>📝 2. Formulir Pendaftaran</h5>
+          <p>Input data calon anggota dilengkapi validasi email, verifikasi NIM/NIP unik, serta pilihan jenis keanggotaan.</p>
+        </div>
+        <div class="feature-card">
+          <h5>💳 3. KTA Digital</h5>
+          <p>Tampilan Kartu Tanda Anggota Digital bergaya modern lengkap dengan status keanggotaan dan ID unik.</p>
+        </div>
+        <div class="feature-card">
+          <h5>🔎 4. Pencarian & Manajemen CRUD</h5>
+          <p>Fitur pencarian real-time berdasarkan Nama/NIM serta tombol aksi cepat untuk Mengedit, Melihat Detail, dan Menghapus data.</p>
+        </div>
+      </div>
+
+      <!-- Source Code ETS Accordion -->
+      <h4 style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-bottom: 0.8rem; margin-top: 2rem;">💻 Salinan Berkas Kode Sumber ETS (Source Code)</h4>
+
+      <details class="code-file" open>
+        <summary>1. Member.kt (Data Model)</summary>
+        <pre class="code-content"><code>package com.example.ets_ppb.data
+
+import java.util.UUID
+
+data class Member(
+    val id: String = UUID.randomUUID().toString(),
+    val fullName: String,
+    val studentId: String, // NIM / NIP
+    val studyProgram: String,
+    val address: String,
+    val phoneNumber: String,
+    val email: String,
+    val membershipType: String // Mahasiswa, Dosen, Umum
+)</code></pre>
+      </details>
+
+      <details class="code-file">
+        <summary>2. LibraryViewModel.kt (ViewModel & Logic)</summary>
+        <pre class="code-content"><code>package com.example.ets_ppb.viewmodel
+
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.lifecycle.ViewModel
+import com.example.ets_ppb.data.Member
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
+
+class LibraryViewModel : ViewModel() {
+
+    private val _members = MutableStateFlow<List<Member>>(
+        listOf(
+            Member(
+                fullName = "Andi Pratama",
+                studentId = "23100101",
+                studyProgram = "Teknik Informatika",
+                address = "Jl. Merpati No. 12, Malang",
+                phoneNumber = "081234567890",
+                email = "andi.pratama@student.ac.id",
+                membershipType = "Mahasiswa"
+            ),
+            Member(
+                fullName = "Siti Aisyah",
+                studentId = "23100102",
+                studyProgram = "Sistem Informasi",
+                address = "Jl. Melati No. 45, Malang",
+                phoneNumber = "081987654321",
+                email = "siti.aisyah@student.ac.id",
+                membershipType = "Mahasiswa"
+            )
+        )
+    )
+    val members: StateFlow<List<Member>> = _members.asStateFlow()
+
+    var searchQuery by mutableStateOf("")
+        private set
+
+    fun updateSearchQuery(query: String) {
+        searchQuery = query
+    }
+
+    val filteredMembers: List<Member>
+        get() {
+            if (searchQuery.isBlank()) return _members.value
+            return _members.value.filter {
+                it.fullName.contains(searchQuery, ignoreCase = true) ||
+                        it.studentId.contains(searchQuery, ignoreCase = true) ||
+                        it.studyProgram.contains(searchQuery, ignoreCase = true)
+            }
+        }
+
+    fun addMember(
+        fullName: String,
+        studentId: String,
+        studyProgram: String,
+        address: String,
+        phoneNumber: String,
+        email: String,
+        membershipType: String
+    ): Result<Unit> {
+        if (fullName.isBlank() || studentId.isBlank() || studyProgram.isBlank() ||
+            address.isBlank() || phoneNumber.isBlank() || email.isBlank()
+        ) {
+            return Result.failure(IllegalArgumentException("Semua kolom wajib diisi!"))
+        }
+
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            return Result.failure(IllegalArgumentException("Format email tidak valid!"))
+        }
+
+        if (_members.value.any { it.studentId == studentId }) {
+            return Result.failure(IllegalArgumentException("Nomor Induk (NIM/NIP) sudah terdaftar!"))
+        }
+
+        val newMember = Member(
+            fullName = fullName,
+            studentId = studentId,
+            studyProgram = studyProgram,
+            address = address,
+            phoneNumber = phoneNumber,
+            email = email,
+            membershipType = membershipType
+        )
+
+        _members.update { listOf(newMember) + it }
+        return Result.success(Unit)
+    }
+
+    fun updateMember(
+        id: String,
+        fullName: String,
+        studentId: String,
+        studyProgram: String,
+        address: String,
+        phoneNumber: String,
+        email: String,
+        membershipType: String
+    ): Result<Unit> {
+        if (fullName.isBlank() || studentId.isBlank() || studyProgram.isBlank() ||
+            address.isBlank() || phoneNumber.isBlank() || email.isBlank()
+        ) {
+            return Result.failure(IllegalArgumentException("Semua kolom wajib diisi!"))
+        }
+
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            return Result.failure(IllegalArgumentException("Format email tidak valid!"))
+        }
+
+        _members.update { list ->
+            list.map {
+                if (it.id == id) {
+                    it.copy(
+                        fullName = fullName,
+                        studentId = studentId,
+                        studyProgram = studyProgram,
+                        address = address,
+                        phoneNumber = phoneNumber,
+                        email = email,
+                        membershipType = membershipType
+                    )
+                } else {
+                    it
+                }
+            }
+        }
+        return Result.success(Unit)
+    }
+
+    fun deleteMember(id: String) {
+        _members.update { list -> list.filter { it.id != id } }
+    }
+
+    fun getMemberById(id: String): Member? {
+        return _members.value.find { it.id == id }
+    }
+}</code></pre>
+      </details>
+
+      <details class="code-file">
+        <summary>3. HomeScreen.kt (Dashboard UI)</summary>
+        <pre class="code-content"><code>package com.example.ets_ppb.ui.screens
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.List
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.*
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun HomeScreen(
+    onNavigateToRegistration: () -> Unit,
+    onNavigateToMemberList: () -> Unit,
+    onNavigateToSearch: () -> Unit
+) {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Column {
+                        Text("LibraryReg", fontWeight = FontWeight.Bold, fontSize = 20.sp)
+                        Text("Aplikasi Pendaftaran Anggota Perpustakaan", fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer
+                )
+            )
+        }
+    ) { innerPadding ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+                .background(
+                    Brush.verticalGradient(
+                        listOf(
+                            MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.3f),
+                            MaterialTheme.colorScheme.background
+                        )
+                    )
+                )
+                .padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primary),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                Column(
+                    modifier = Modifier.padding(20.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    Text(
+                        text = "Selamat Datang di LibraryReg 👋",
+                        style = MaterialTheme.typography.titleLarge,
+                        color = MaterialTheme.colorScheme.onPrimary,
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(
+                        text = "Solusi digital pendaftaran dan manajemen keanggotaan perpustakaan perguruan tinggi secara cepat, akurat, dan terintegrasi.",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.9f)
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Text(
+                text = "Menu Utama",
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.primary
+            )
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                MenuCard(
+                    title = "Formulir Pendaftaran",
+                    subtitle = "Daftar anggota baru",
+                    icon = Icons.Default.Add,
+                    modifier = Modifier.weight(1f),
+                    onClick = onNavigateToRegistration
+                )
+                MenuCard(
+                    title = "Daftar Anggota",
+                    subtitle = "Lihat & kelola data",
+                    icon = Icons.Default.List,
+                    modifier = Modifier.weight(1f),
+                    onClick = onNavigateToMemberList
+                )
+            }
+        }
+    }
+}
+
+@Composable
+fun MenuCard(
+    title: String,
+    subtitle: String,
+    icon: ImageVector,
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit
+) {
+    Card(
+        onClick = onClick,
+        modifier = modifier.height(130.dp),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize().padding(16.dp),
+            verticalArrangement = Arrangement.SpaceBetween
+        ) {
+            Box(
+                modifier = Modifier.size(40.dp).clip(RoundedCornerShape(8.dp)).background(MaterialTheme.colorScheme.primaryContainer),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(imageVector = icon, contentDescription = title, tint = MaterialTheme.colorScheme.primary)
+            }
+            Column {
+                Text(text = title, style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
+                Text(text = subtitle, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+        }
+    }
+}</code></pre>
+      </details>
+    </section>
+
+    <!-- Dokumentasi Tugas 7 -->
+    <section class="docs-section" id="tugas7">
       <div class="docs-header">
         <div>
           <div class="section-title title-dark" style="margin-bottom: 0.2rem;">
